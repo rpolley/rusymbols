@@ -89,7 +89,7 @@ impl Expression {
     /// let ten = Expression::new_val(10.0); // new 'x' variable creation
     /// let two = Expression::new_val(2.0); // new 2.0 value creation
     /// let expr = ten * two; // new expression creation
-    /// let args: HashMap<&str, f64> = HashMap::new();
+    /// let args: HashMap<String, f64> = HashMap::new();
     ///
     /// assert_eq!(expr.to_string(), "10 * 2");
     /// assert_eq!(expr.eval_args(&args).unwrap(), 20.0);
@@ -178,9 +178,9 @@ impl Expression {
     /// use std::collections::HashMap;
     /// use rusymbols::Expression;
     ///
-    /// let mut args: HashMap<&str, f64> = HashMap::new();
-    /// args.insert(LITERAL_X, 2.0);
-    /// args.insert(LITERAL_Y, 2.0);
+    /// let mut args: HashMap<String, f64> = HashMap::new();
+    /// args.insert(LITERAL_X.to_string(), 2.0);
+    /// args.insert(LITERAL_Y.to_string(), 2.0);
     ///
     /// let x = Expression::new_var(LITERAL_X);
     /// let y = Expression::new_var(LITERAL_Y);
@@ -188,7 +188,7 @@ impl Expression {
     ///
     /// assert_eq!(expr.eval_args(&args).unwrap(), 4.0);
     /// ```
-    pub fn eval_args(&self, args: &HashMap<&str, f64>) -> Option<f64> {
+    pub fn eval_args(&self, args: &HashMap<String, f64>) -> Option<f64> {
         match &self.kind {
             Actions::Val(value) => Some(value.clone()),
             Actions::Var(var) => Some(args.get(var.as_str())?.clone()),

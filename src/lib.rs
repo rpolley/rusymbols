@@ -29,8 +29,8 @@
 //! let two = Expression::new_val(2.0);
 //! let polynomial = x.clone().pow(two.clone()) - x + two;
 //!
-//! let mut args: HashMap<&str, f64> = HashMap::new();
-//! args.insert("x", 1.0);
+//! let mut args: HashMap<String, f64> = HashMap::new();
+//! args.insert("x".to_string(), 1.0);
 //!
 //! assert_eq!(polynomial.to_string(), "x**2 - x + 2");
 //! assert_eq!(polynomial.eval_args(&args).unwrap(), 2.0);
