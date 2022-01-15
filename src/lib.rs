@@ -1,4 +1,5 @@
-//! # About
+//!```text
+//!  # About
 //!
 //! rusymbols is a Rust crate for symbolic mathematics. It aims to become a full-featured computer
 //! algebra system (CAS) while keeping the code as simple as possible in order to be comprehensible
@@ -16,10 +17,10 @@
 //!     - Fast (maybe not at maximum speed, but still fast)
 //!     - Safe
 //!     - Universal (compatibility with nalgebra and standard types (possibly) and other similar crates)
-//!
 //! # How to use
 //!     Just use it! The main idea is simplicity. Enjoy!
 //! ## Example
+//! ```
 //! ```
 //! use rusymbols::Expression;
 //! use std::collections::HashMap;
